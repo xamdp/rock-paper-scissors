@@ -7,8 +7,14 @@
  * 5. There will be 5 rounds, per game.
  * */
 
-console.log("Hello World");
+
+
 /* I can assign 3 values 3 = Rock, 2 = Paper, and 1 = scissors */
+const btnRock = document.querySelector('.rock');
+const btnPaper = document.querySelector('.paper');
+const btnScissor = document.querySelector('.scissor');
+
+
 
 let humanScore = 0;
 let computerScore = 0;
@@ -19,7 +25,7 @@ const CHOICES = {
 	ROCK: 3
 };
 
-const ROUNDS = 5;
+// const ROUNDS = 5;
 
 /* This will be the computer random choice */
 function getComputerChoice() {
@@ -27,23 +33,24 @@ function getComputerChoice() {
 }
 
 /* This will be the human choice */
-function getHumanChoice() {
-	let choice = Number(window.prompt("1 -> Scissors,  2 -> Paper,  3 -> Rock, Choose a number: "));
-	if (choice < 1 || choice > 3 || isNaN(choice)) {
-		alert("Please enter a valid number between 1 and 3");
-		return getHumanChoice(); // ask again if less than 1, greater than 3 and if not a number.
-	}
-	return choice;
+function getHumanChoice(choice) {
+	// let choice = Number(window.prompt("1 -> Scissors,  2 -> Paper,  3 -> Rock, Choose a number: "));
+	// if (choice < 1 || choice > 3 || isNaN(choice)) {
+	// 	alert("Please enter a valid number between 1 and 3");
+	// 	return getHumanChoice(); // ask again if less than 1, greater than 3 and if not a number.
+	// } return choice;
 }
 
 function getChoiceName(number) {
 	switch(number) {
-		case 1: return "Scissors";
-		case 2: return "Paper";
-		case 3: return "Rock";
+		case 1: return btnScissor.textContent;
+		case 2: return btnPaper.textContent;
+		case 3: return btnRock.textContent;
 		default: return "Unknown";
 	}
 }
+
+
 
 function playRound(humanChoice, computerChoice) {
 	console.log("Human choice is " + humanChoice + " (" + getChoiceName(humanChoice) + ")");
@@ -69,15 +76,16 @@ function playRound(humanChoice, computerChoice) {
 	console.log(`Current Score - Human: ${humanScore}, Computer: ${computerScore}`);
 }
 
+
 function playGame() {
 	// let humanScore = 0;
 	// let computerScore = 0;
 
-	for (let round = 1; round <= ROUNDS; round++) {
+	// for (let round = 1; round <= ROUNDS; round++) {
 		const humanChoice =  getHumanChoice();
 		const computerChoice =  getComputerChoice();
 		playRound(humanChoice, computerChoice);
-	}
+	// }
 
 	console.log("\Game Over!");
 	console.log(`Final Score - Human: ${humanScore}, Computer: ${computerScore}`);
@@ -92,8 +100,30 @@ function playGame() {
 
 }
 
+btnRock.addEventListener("click", (event) => {
+	let playerSelection = Number(event.target.value);
+	const computerSelection = getComputerChoice();
+	playRound(playerSelection, computerSelection)
+	// console.log(getChoiceName(playerSelection));
+});
+
+btnPaper.addEventListener("click", (event) => {
+	let playerSelection = Number(event.target.value);
+	const computerSelection = getComputerChoice();
+	playRound(playerSelection, computerSelection)
+});
+
+btnScissor.addEventListener("click", (event) => {
+	let playerSelection = Number(event.target.value);
+	const computerSelection = getComputerChoice();
+	playRound(playerSelection, computerSelection)
+});
+
+
 /* Start the game */
-playGame();
+// playGame();
+
+
 
 
 

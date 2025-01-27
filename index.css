@@ -1,0 +1,51 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	/* box-sizing: border-box; */
+}
+
+.game-arena {
+  display: flex;
+  /* width: 600px; */
+  height: 40px;
+  padding: 10px 30px 10px 30px;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: #76c3ce;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.results {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  background-color: #9ff8c8;
+  align-items: center;
+  /* width: 600px; */
+  height: 100px;
+}
+
+button {
+  height: 30px;
+  width: 50px;
+}
+
+.buttons .rock {
+  color: red;
+}
+
+.buttons .paper {
+  color: blue;
+}
+
+.buttons .scissor {
+  color: green;
+}
+
