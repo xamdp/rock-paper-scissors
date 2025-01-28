@@ -5,19 +5,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Rock Paper Scissors</title>
 		<link rel="stylesheet" href="index.css">
+		<link rel="icon" href="assets/icons/rps.png" type="image/x-icon"/>
 	</head>
 	<body>
+		<div class="scoreboard">
+			<h3 class="human-score"></h3>
+			<h3 class="computer-score"></h3>
+		</div>
 		<div class="game-arena">
 			<div class="buttons">
-				<button class="rock" value="3">Rock</button>
-				<button class="paper" value="2">Paper</button>
-				<button class="scissor" value="1">Scissor</button>
+				<button class="rock" value="3"><img class="rock-hand" src="assets/icons/fist.png" alt="rock"></button>
+				<button class="paper" value="2"><img class="paper-hand" src="assets/icons/hand-paper.png" alt="paper"</button>
+				<button class="scissor" value="1"><img class="scissor-hand" src="assets/icons/scissors.png" alt="scissor"</button>
 			</div>
 		</div>
 		<div class="results">
-			<div >
-				Results here...
-			</div>
 		</div>
 
 	<script src="index.js"></script>
