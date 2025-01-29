@@ -6,11 +6,12 @@
 
 
 ---
+<!-- [![Watch the demo](https://raw.githubusercontent.com/xamdp/rock-paper-scissors/main/thumbnail.png)](https://raw.githubusercontent.com/xamdp/rock-paper-scissors/main/rps-demo.mp4) -->
 
 
-[![Watch the demo](https://raw.githubusercontent.com/xamdp/rock-paper-scissors/main/thumbnail.png)](https://raw.githubusercontent.com/xamdp/rock-paper-scissors/main/rps-demo.mp4)
+### Demo
+[![Video Title](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=Igsd9K5yPA8)
 
 
-
-References:
+### References
 For the used icons, they are from this [site](https://www.flaticon.com/).
