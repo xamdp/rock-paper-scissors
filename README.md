@@ -8,8 +8,7 @@
 ---
 
 
-[![Watch the demo](https://raw.githubusercontent.com/xamdp/rock-paper-scissors/main/thumbnail.png)]
-(https://raw.githubusercontent.com/xamdp/rock-paper-scissors/main/rps-demo.mp4)
+[![Watch the demo](https://raw.githubusercontent.com/xamdp/rock-paper-scissors/main/thumbnail.png)](https://raw.githubusercontent.com/xamdp/rock-paper-scissors/main/rps-demo.mp4)
 
 
 
