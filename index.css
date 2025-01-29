@@ -16,16 +16,26 @@ body {
   justify-content: space-around;
 }
 
-h3 {
+h5 {
   color: purple;
+}
+
+.display-winner {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  color: #800020;
 }
 
 .game-arena {
   display: flex;
   /* width: 600px; */
-  height: 40px;
-  padding: 10px 30px 10px 30px;
-  margin-top: 40px ;
+  height: 20px;
+  padding: 10px 20px 10px 20px;
   align-items: center;
   justify-content: center;
   background-color: #76c3ce;

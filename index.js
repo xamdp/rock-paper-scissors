@@ -14,9 +14,6 @@
 let humanScore = 0;
 let computerScore = 0;
 
-const scoreHuman = document.querySelector('.human-score');
-const scoreComputer = document.querySelector('.computer-score');
-
 const CHOICES = {
 	SCISSORS: 1,
 	PAPER: 2,
@@ -25,34 +22,23 @@ const CHOICES = {
 
 const ROUNDS = 5;
 
-
-
-// const ROUNDS = 5;
-
 /* This will be the computer random generated choice */
 function getComputerChoice() {
 	return Math.floor(Math.random() * 3) + 1;
 }
-
-/* the playerSelection is used instead, rather than using the old function which is getHumanChoice */
-
-/* This will be the human choice */
-// function getHumanChoice(choice) {
-	// let choice = Number(window.prompt("1 -> Scissors,  2 -> Paper,  3 -> Rock, Choose a number: "));
-	// if (choice < 1 || choice > 3 || isNaN(choice)) {
-	// 	alert("Please enter a valid number between 1 and 3");
-	// 	return getHumanChoice(); // ask again if less than 1, greater than 3 and if not a number.
-	// } return choice;
-// }
 
 function getChoiceName(number) {
 	switch(number) {
 		case 1: return 'Scissor';
 		case 2: return 'Paper';
 		case 3: return 'Rock';
-		default: return "Unknown";
+		default: return "Unknown"; // this returns when I click the img instead of the button.
 	}
 }
+
+const scoreHuman = document.querySelector('.human-score > strong');
+const scoreComputer = document.querySelector('.computer-score > strong');
+
 
 function playRound(humanChoice, computerChoice) {
 	const results = document.querySelector('.results');
@@ -68,7 +54,10 @@ function playRound(humanChoice, computerChoice) {
 
 	// check for a tie
 	if (humanChoice === computerChoice) {
-		console.log("It's a tie for this round!")
+		const noWon = document.createElement('p');
+		noWon.textContent = `It's a tie for this round!`;
+		results.appendChild(noWon);
+		results.appendChild(br);
 		return;
 	}
 
@@ -82,58 +71,42 @@ function playRound(humanChoice, computerChoice) {
 		results.appendChild(humanWon);
 		results.appendChild(br);
 		humanScore++;
+		scoreHuman.textContent = ` ${humanScore}`;
 	} else {
 		const computerWon = document.createElement('p');
 		computerWon.textContent = `Computer won the round!`;
 		results.appendChild(computerWon);
 		results.appendChild(br);
 		computerScore++;
-	}
-	// console.log(`Current Score - Human: ${humanScore}, Computer: ${computerScore}`);
-	scoreHuman.textContent = `You: ${humanScore}`;
-	scoreComputer.textContent = `Computer: ${computerScore}`;
-}
-
-
-
-/* will need some refactoring */
-function playGame() {
-	let humanScore = 0;
-	let computerScore = 0;
-
-	for (let round = 1; round <= ROUNDS; round++) {
-		// const humanChoice =  getHumanChoice();
-		// const computerChoice =  getComputerChoice();
-		// playRound(humanChoice, computerChoice);
+		scoreComputer.textContent = ` ${computerScore}`;
 	}
 
-	console.log("\Game Over!");
-	console.log(`Final Score - Human: ${humanScore}, Computer: ${computerScore}`);
+	getWinner(humanScore, computerScore);
 
-	if (humanScore > computerScore) {
-		console.log("You Won the game!");
-	} else if (computerScore > humanScore) {
-		console.log("Computer Won the game!");
-	} else {
-		console.log("It's a tie!")
-	}
 
 }
 
+const displayWinner = document.querySelector('.display-winner');
+const winner = document.createElement('h4');
+
+function getWinner(scoreOfPlayer, scoreOfComputer ) {
+	if (scoreOfPlayer === 5) {
+		winner.textContent = 'You Won the Game!';
+		displayWinner.appendChild(winner);
+	} 
+
+	if (scoreOfComputer === 5) {
+		winner.textContent = 'Computer Won the Game!';
+		displayWinner.appendChild(winner);
+	}
+	return;
+}
 
 const buttons = document.querySelectorAll('button')
 buttons.forEach(btn => {
 	btn.addEventListener('click', (event) => {
 		const playerSelection = Number(event.target.value);
 		const computerSelection = getComputerChoice();
-		playRound(playerSelection, computerSelection);
+		playRound(playerSelection, computerSelection)
 	});
 });
-
-/* Start the game */
-// playGame();
-
-
-
-
-
