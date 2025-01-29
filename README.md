@@ -10,7 +10,7 @@
 
 
 ### Demo
-[![Video Title](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=Igsd9K5yPA8)
+[![Video Title](https://raw.githubusercontent.com/xamdp/rock-paper-scissors/main/thumbnail.png)](https://www.youtube.com/watch?v=Igsd9K5yPA8)
 
 
 ### References
